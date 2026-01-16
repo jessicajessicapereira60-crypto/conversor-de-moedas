@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfólio | Desenvolvedora Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Estilos Base */
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; margin: 0; background: #f4f4f4; }
+        
+        /* TOPO COM A COR DO SUCESSO (Vinho Elegante) */
+        header { 
+            background: #6d1c1c; 
+            color: white; 
+            padding: 3rem; 
+            text-align: center;
+            border-bottom: 5px solid #f39c12;
+        }
+        
+        .container { max-width: 800px; margin: 30px auto; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        /* Títulos */
+        h2 { color: #6d1c1c; border-bottom: 3px solid #f39c12; padding-bottom: 10px; }
+        
+        /* Cartão de Projetos */
+        .projeto-card { border: 1px solid #eee; padding: 20px; border-radius: 8px; margin-bottom: 20px; transition: 0.3s; }
+        .projeto-card:hover { border-color: #f39c12; background: #fffdf9; transform: scale(1.01); }
+        
+        /* Tags de Habilidades que pulam */
+        .tag { 
+            background: #f39c12; 
+            color: #1a2a3a; 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            font-size: 0.85rem; 
+            font-weight: bold; 
+            margin-right: 5px; 
+            display: inline-block;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .tag:hover {
+            background: #6d1c1c; /* Muda para o vinho no hover */
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Botão WhatsApp */
+        .btn-whatsapp {
+            display: inline-block;
+            background: #25d366;
+            color: white !important;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+        .btn-whatsapp:hover {
+            background: #128c7e;
+            transform: scale(1.05);
+        }
+        @media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    header {
+        padding: 1.5rem;
+    }
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Jessica Pereira</h1>
+    <p><strong><i class="fas fa-laptop-house"></i> Disponível para Estágio Home Office / Remoto</strong></p>
+    <p>Desenvolvedora Front-End em Formação | Estudante de ADS</p>
+</header>
+
+<div class="container">
+    <section>
+        <h2>Sobre Mim</h2>
+        <p>Atualmente em transição de carreira da indústria para a tecnologia, curso Análise e Desenvolvimento de Sistemas com foco em Front-End. Sou uma profissional dedicada, acostumada com rotinas desafiadoras e prazos rigorosos.</p>
+    </section>
+
+    <section>
+        <h2>Habilidades Técnicas</h2>
+        <span class="tag"><i class="fab fa-html5"></i> HTML5</span>
+        <span class="tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+        <span class="tag"><i class="fas fa-code"></i> JavaScript </span>
+        <span class="tag"><i class="fab fa-github"></i> Git/GitHub </span>
+    </section>
+
+    <section>
+        <h2>Idiomas</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;">
+                <strong>Inglês:</strong> <span>Nível Intermediário (B1) — Score 68 (Duolingo)</span>
+            </li>
+            <li><strong>Português:</strong> Nativo</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Projetos em Destaque</h2>
+        <div class="projeto-card">
+            <h3>Conversor de Moedas (BRL para USD)</h3>
+            <div style="margin: 15px 0; background: #f9f9f9; padding: 15px; border-radius: 8px;">
+                <label>Valor em Real (R$):</label><br>
+                <input type="number" id="valorReal" placeholder="Ex: 100.00" style="padding: 8px; width: 80%; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;"><br><br>
+                
+                <button onclick="converterMoeda()" style="background: #f39c12; border: none; padding: 10px 20px; color: #1a2a3a; font-weight: bold; border-radius: 4px; cursor: pointer;">Converter para Dólar</button>
+                
+                <p id="resultadoConversao" style="margin-top: 15px; font-weight: bold; color: #6d1c1c;"></p>
+            </div>
+            <p>Aplicação que demonstra lógica de programação e manipulação de eventos.</p>
+            <div class="tag">JavaScript</div>
+            <div class="tag">Lógica Financeira</div>
+        </div>
+    </section>
+
+    <section style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px dashed #ccc;">
+        <h2>Vamos conversar?</h2>
+        <p>Se você procura uma estagiária dedicada e pronta para o trabalho remoto, entre em contato:</p>
+        
+        <a href="https://wa.me/5551983019337?text=Olá%20Jessica,%20vi%20seu%20portfólio!" 
+           class="btn-whatsapp" target="_blank">
+            Chamar no WhatsApp agora
+        </a>
+    </section>
+</div>
+
+<script>
+    function converterMoeda() {
+        const valorEmReal = document.getElementById("valorReal").value;
+        const resultadoElemento = document.getElementById("resultadoConversao");
+        const cotacaoDolar = 5.30; 
+        
+        if (valorEmReal === "" || valorEmReal <= 0) {
+            resultadoElemento.innerText = "Por favor, digite um valor válido.";
+            resultadoElemento.style.color = "red";
+        } else {
+            const valorConvertido = (valorEmReal / cotacaoDolar).toFixed(2);
+            resultadoElemento.innerText = "O valor em Dólar é: $ " + valorConvertido;
+            resultadoElemento.style.color = "#6d1c1c";
+        }
+    }
+</script>
+
+</body>
+</html>
